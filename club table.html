@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Club Directory</title>
+    <!-- DataTables CSS -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #a1c2e4;
+            color: #92da57;
+            padding: 20px;
+        }
+        h2 {
+            color: #055c1b;
+        }
+        .dataTables_wrapper .dataTables_paginate .paginate_button {
+            background-color: #4da6ff;
+            color: #265e49;
+            border: none;
+            padding: 5px 10px;
+            margin: 2px;
+            border-radius: 3px;
+        }
+        .dataTables_wrapper .dataTables_paginate .paginate_button.current {
+            background-color: #4da6ff;
+            color: #fff;
+        }
+        .dataTables_wrapper .dataTables_filter input {
+            color: #811f8f;
+            background-color: #d0e2d3;
+            border: 1px solid #4da6ff;
+            padding: 5px;
+            border-radius: 3px;
+        }
+        .dataTables_wrapper .dataTables_length select {
+            color: #fff;
+            background-color: #d0e2d3;
+            border: 1px solid #034729;
+            padding: 5px;
+            border-radius: 3px;
+        }
+        table.dataTable thead th {
+            background-color: #05541f;
+            color: #fff;
+        }
+        /* Light blue and white alternate row colors */
+        table.dataTable tbody tr:nth-child(odd) {
+            background-color: #cc8e11; /* Light blue color for odd rows */
+        }
+        table.dataTable tbody tr:nth-child(even) {
+            background-color: #41938b; /* White color for even rows */
+        }
+        /* Hover effect with a slightly darker blue */
+        table.dataTable tbody tr:hover {
+            background-color: #cceeff; /* Slightly darker light blue for hover effect */
+        }
+        /* Optional: Custom highlight for specific rows (e.g., special conditions) */
+        .highlight-room {
+            background-color: #b3e0ff; /* Even darker light blue for highlighted rows */
+        }
+    </style>
+</head>
+<body>
+
+<h2>Event</h2>s
+<div style="overflow-x: auto;">
+    <!-- HTML Table from Excel -->
+    <table id="clubTable" class="display" style="width:100%">
+        <thead>
+            <tr>
+                <th>Club Name</th>
+                <th>Club Email</th>
+                <th>Club Room</th>
+                <th>Days/Time Club Meets</th>
+                <th>Club Advisor Name</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Accounting Club</td>
+                <td>bmccaccclub23@gmail.com</td>
+                <td>F208</td>
+                <td>Wednesdays 2pm-4pm</td>
+                <td>Barry Cooper</td>
+            </tr>
+            <tr>
+                <td>Acentos Latinos Club</td>
+                <td>cacentoslatinosbmcc@gmail.com</td>
+                <td>M317</td>
+                <td>Wednesdays 2pm-4pm</td>
+                <td>Ainoa Inigo</td>
+            </tr>
+            <tr>
+                <td>Arabic Cultural Club</td>
+                <td>arabicculturalclubbmcc@gmail.com</td>
+                <td>M314</td>
+                <td>Wednesdays 2pm-4pm</td>
+                <td>Roaa</td>
+            </tr>
+            <tr>
+                <td>Art History Club</td>
+                <td>ahclub.bmcc@gmail.com</td>
+                <td>F1010</td>
+                <td>Wednesdays 2pm-4pm</td>
+                <td>Sarah Madole Lewis</td>
+            </tr>
+            <!-- Add more rows from your Excel data as needed -->
+        </tbody>
+    </table>
+</div>
+
+<!-- jQuery and DataTables JS -->
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.js"></script>
+<script>
+    $(document).ready(function() {
+        $('#clubTable').DataTable({
+            "pagingType": "full_numbers",
+            "pageLength": 10
+        });
+    });
+</script>
+
+</body>
+</html>
